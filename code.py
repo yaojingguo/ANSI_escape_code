@@ -8,5 +8,12 @@ def move_cursor():
   print("line2")
   time.sleep(2)
 
+def esc(code):
+  return f"\033[{code}m"
 
-move_cursor()
+def color():
+  print('this is ', esc('31'), 'really', esc(0), ' important', sep='')
+  print('this is ', esc('31;1'), 'really', esc(0), ' important', sep='')
+  print('this is ', esc('31;1;4'), 'really', esc(0), ' important', sep='')
+
+color()
